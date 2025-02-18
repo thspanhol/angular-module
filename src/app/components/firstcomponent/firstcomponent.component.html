@@ -3,9 +3,11 @@
   type="text"
   placeholder="Digite algo"
   [(ngModel)]="stringSolo"
-  (keydown.enter)="mostraLog()"
+  (keydown.enter)="addTodo()"
 />
-<button (click)="mostraLog()">LOG</button>
+<button (click)="addTodo()">ADD</button>
+<button (click)="logGlobal()">Global</button>
+<button (click)="redirect()">list</button>
 
 <ng-container *ngFor="let item of arrayStrings">
   <app-itemtodo

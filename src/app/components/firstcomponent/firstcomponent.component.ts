@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SharedService } from '../../core/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-firstcomponent',
@@ -10,8 +12,17 @@ export class FirstcomponentComponent {
   stringSolo: string = "";
   arrayStrings: string[] = []
   fontSize: string = "40px";
+  global: string = "";
 
-  mostraLog = () => {
+  constructor(private sharedService: SharedService, private router: Router) {
+    this.global = this.sharedService.getMensagem();
+  }
+
+  logGlobal = () => console.log(this.global);
+
+  redirect = () => this.router.navigate(['/list'])
+  
+  addTodo = () => {
     this.arrayStrings.push(this.stringSolo)
     this.stringSolo = "";
     this.fontSize = this.fontSize === "40px" ? "20px" : "40px"    
