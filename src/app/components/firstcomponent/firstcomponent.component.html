@@ -1,0 +1,52 @@
+<p>Último item adicionado: {{ stringSolo }}</p>
+<input
+  type="text"
+  placeholder="Digite algo"
+  [(ngModel)]="stringSolo"
+  (keydown.enter)="mostraLog()"
+/>
+<button (click)="mostraLog()">LOG</button>
+
+<ng-container *ngFor="let item of arrayStrings">
+  <app-itemtodo
+    [data]="item"
+    [func]="deletePropriedade"
+    [up]="upPropriedade"
+    [down]="downPropriedade"
+  ></app-itemtodo>
+</ng-container>
+
+<pre
+  *ngIf="arrayStrings.length > 0"
+  [ngClass]="{ classRed: stringSolo.length > 3 && stringSolo.length < 7 }"
+  [ngStyle]="{'font-size': fontSize}"
+>
+  -- Bidings:
+  Comunicação entre componente e interface.
+
+  Interpolação - {{"{{}}"}}:
+  Imprime valores do componente no HTML.
+
+  Propriedade - [ ]:
+  Passa valores do componente como propriedades para as tags/componentes.
+
+  Evento - ( ):
+  Associa eventos de interação do usuário.
+
+  Two-way - [( )]:
+  Liga a interface e a propriedade, de forma que alteração em alguma delas altera automaticamente a outra.
+
+  Bindings usadas anteriormente no lugar do [(ngModel)]:
+  [value]="stringSolo"
+  (input)="attPropriedade($event)"
+
+  -- Diretivas:
+  Classes que manipulam o DOM de forma declarativa.
+
+  De Atributo:
+  Modificam o comportamento ou aparência do elemento. Ex: ngClass, ngStyle e ngModel.
+
+  Estruturais:
+  Alteram o DOM adicionando ou removendo elementos. Ex: ngIf e ngFor.
+  (O * nessas diretivas dispensam o uso do ng-template)
+</pre>
