@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { SharedService } from '../../core/shared.service';
 import { Router } from '@angular/router';
+import { OnInit, DoCheck, AfterViewInit, OnDestroy } from '@angular/core';
+
 
 @Component({
   selector: 'app-firstcomponent',
   templateUrl: './firstcomponent.component.html',
   styleUrl: './firstcomponent.component.css',
 })
-export class FirstcomponentComponent {
+export class FirstcomponentComponent implements OnInit, DoCheck, AfterViewInit, OnDestroy {
 
   stringSolo: string = "";
   arrayStrings: string[] = []
@@ -16,6 +18,27 @@ export class FirstcomponentComponent {
 
   constructor(private sharedService: SharedService, private router: Router) {
     this.global = this.sharedService.getMensagem();
+    console.log('Construtor chamado!');    
+  }
+  
+  // Executado uma vez logo após a criação do componente.
+  ngOnInit(): void {
+    console.log('ngOnInit - Componente inicializado.');
+  }
+
+  // Executado a cada ciclo de detecção de mudanças.
+  ngDoCheck(): void {
+    console.log('ngDoCheck - Verificação de mudanças.');
+  }
+
+  // Chamado após a visualização do componente ser renderizada.
+  ngAfterViewInit(): void {
+    console.log('ngAfterViewInit - Visualização carregada.');
+  }
+
+  // Executado antes do componente ser removido do DOM.
+  ngOnDestroy(): void {
+    console.log('ngOnDestroy - Componente destruído.');
   }
 
   logGlobal = () => console.log(this.global);

@@ -22,5 +22,4 @@ export class ListcomponentComponent {
 
     redirect = () => this.router.navigate(['/todo'])
 
-
 }
