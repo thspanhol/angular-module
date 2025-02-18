@@ -30,40 +30,18 @@ export class FirstcomponentComponent {
 
   upPropriedade = (prop: string) => {
     let index = this.arrayStrings.indexOf(prop);
-    let [part1, part2] = this.splitArray(this.arrayStrings, prop);
-
-    let add = part1[part1.length-1]
-
-    part1 = part1.filter((str) => str != add)
-
-    part1.push(prop, add, ...part2);
-
-    this.arrayStrings = part1;
+    if (index > 0) { 
+      [this.arrayStrings[index], this.arrayStrings[index - 1]] = 
+      [this.arrayStrings[index - 1], this.arrayStrings[index]];
+    }
   }
 
   downPropriedade = (prop: string) => {
     let index = this.arrayStrings.indexOf(prop);
-    let [part1, part2] = this.splitArray(this.arrayStrings, prop);
-
-    let add = part2[0]
-
-    part2 = part2.filter((str) => str != add)
-
-    part1.push(add, prop, ...part2);
-
-    this.arrayStrings = part1;  }
-
-  splitArray(arr: string[], separator: string): [string[], string[]] {
-    const index = arr.indexOf(separator);
-    
-    if (index === -1) {
-        return [arr, []];
+    if (index !== -1 && index < this.arrayStrings.length - 1) {
+      [this.arrayStrings[index], this.arrayStrings[index + 1]] = 
+      [this.arrayStrings[index + 1], this.arrayStrings[index]];
     }
-
-    const firstPart = arr.slice(0, index);
-    const secondPart = arr.slice(index + 1);
-
-    return [firstPart, secondPart];
-}
+  }
 
 }
