@@ -7,7 +7,10 @@
 />
 <button (click)="addTodo()">ADD</button>
 <button (click)="logGlobal()">Global</button>
-<button (click)="redirect()">list</button>
+<button (click)="redirect('/list')">list</button>
+<button (click)="redirect('/private')">Private Route</button>
+<button (click)="changeLogin()">Login: {{ login }}</button>
+
 
 <ng-container *ngFor="let item of arrayStrings">
   <app-itemtodo

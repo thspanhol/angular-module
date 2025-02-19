@@ -14,10 +14,12 @@ export class FirstcomponentComponent implements OnInit, DoCheck, AfterViewInit, 
   stringSolo: string = "";
   arrayStrings: string[] = []
   fontSize: string = "40px";
-  global: string = "";
+  global: string;
+  login: boolean;
 
   constructor(private sharedService: SharedService, private router: Router) {
     this.global = this.sharedService.getMensagem();
+    this.login = this.sharedService.getLogin();
     console.log('Construtor chamado!');    
   }
   
@@ -43,7 +45,13 @@ export class FirstcomponentComponent implements OnInit, DoCheck, AfterViewInit, 
 
   logGlobal = () => console.log(this.global);
 
-  redirect = () => this.router.navigate(['/list'])
+  redirect = (route: string) => this.router.navigate([route]);
+
+  changeLogin = () => {
+    this.sharedService.setLogin()
+    this.login = this.sharedService.getLogin();
+    console.log(this.login);
+  }
   
   addTodo = () => {
     this.arrayStrings.push(this.stringSolo)

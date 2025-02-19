@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class SharedService {
   private mensagem: string = 'Mensagem Inicial';
+  private login: boolean = false;
+
 
   getMensagem(): string {
     return this.mensagem;
@@ -12,5 +14,13 @@ export class SharedService {
 
   setMensagem(novaMensagem: string) {
     this.mensagem = novaMensagem;
+  }
+
+  getLogin(): boolean {
+    return this.login;
+  }
+
+  setLogin() {
+    this.login = !this.login;
   }
 }
