@@ -19,6 +19,11 @@ export class FirstcomponentComponent implements OnInit, DoCheck, AfterViewInit, 
   outputString: string = "";
   today: Date = new Date()
 
+  elvis = {
+    nome: "Thales",
+    cursos: { c1: {t1: "Angular"}, c2: {t1: null} },
+  };
+
   constructor(private sharedService: SharedService, private router: Router) {
     this.global = this.sharedService.getMensagem();
     this.login = this.sharedService.getLogin();
