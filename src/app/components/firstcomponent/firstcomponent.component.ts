@@ -16,6 +16,7 @@ export class FirstcomponentComponent implements OnInit, DoCheck, AfterViewInit, 
   fontSize: string = "40px";
   global: string;
   login: boolean;
+  outputString: string = "";
 
   constructor(private sharedService: SharedService, private router: Router) {
     this.global = this.sharedService.getMensagem();
@@ -42,6 +43,8 @@ export class FirstcomponentComponent implements OnInit, DoCheck, AfterViewInit, 
   ngOnDestroy(): void {
     console.log('ngOnDestroy - Componente destruído.');
   }
+
+  outputFunction = (event: string) => this.outputString = event;
 
   logGlobal = () => console.log(this.global);
 

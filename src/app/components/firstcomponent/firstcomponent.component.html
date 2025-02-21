@@ -1,4 +1,6 @@
 <p>Último item adicionado: {{ stringSolo }}</p>
+<p>Item passado pelo Output: {{ outputString }}</p>
+
 <input
   type="text"
   placeholder="Digite algo"
@@ -11,9 +13,8 @@
 <button (click)="redirect('/private')">Private Route</button>
 <button (click)="changeLogin()">Login: {{ login }}</button>
 
-
 <ng-container *ngFor="let item of arrayStrings">
-  <app-itemtodo
+  <app-itemtodo (sendString)="outputFunction($event)"
     [data]="item"
     [func]="deletePropriedade"
     [up]="upPropriedade"
