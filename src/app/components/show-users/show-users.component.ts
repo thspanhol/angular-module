@@ -55,4 +55,6 @@ export class ShowUsersComponent implements OnInit{
     });
   }
 
+  getId = (id: string) => this.inputId = id;
+  
 }

@@ -7,6 +7,6 @@
     <li *ngFor="let user of users">
         <strong>{{ user.nome }}</strong>
         <p>{{ user.email }}</p>
-        <p>{{ user.id }}</p>
+        <p (click)="getId(user.id)">{{ user.id }}</p>
     </li>
 </ul>
