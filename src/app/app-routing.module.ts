@@ -5,6 +5,7 @@ import { ListcomponentComponent } from './components/listcomponent/listcomponent
 import { PrivatecomponentComponent } from './components/privatecomponent/privatecomponent.component';
 import { AuthorizedGuard } from './guard/Authorized.guard';
 import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'todo', pathMatch: 'full'},
@@ -12,7 +13,7 @@ const routes: Routes = [
   {path: 'list', component: ListcomponentComponent},
   {path: 'private', component: PrivatecomponentComponent, canActivate: [AuthorizedGuard]},
   {path: 'templateDrivenForm', component: TemplateDrivenFormComponent},
-
+  {path: 'reactiveForm', component: ReactiveFormComponent},
 ];
 
 @NgModule({

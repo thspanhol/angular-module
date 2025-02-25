@@ -8,7 +8,8 @@ import { ListcomponentComponent } from './components/listcomponent/listcomponent
 import { CoreModule } from './core/core.module';
 import { PrivatecomponentComponent } from './components/privatecomponent/privatecomponent.component';
 import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -16,10 +17,12 @@ import { FormsModule } from '@angular/forms';
     ListcomponentComponent,
     PrivatecomponentComponent,
     TemplateDrivenFormComponent,
+    ReactiveFormComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     CoreModule,
     AppRoutingModule,
     FirstcomponentModule,
