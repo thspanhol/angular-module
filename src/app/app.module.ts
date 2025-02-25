@@ -7,15 +7,19 @@ import { FirstcomponentModule } from './components/firstcomponent/firstcomponent
 import { ListcomponentComponent } from './components/listcomponent/listcomponent.component';
 import { CoreModule } from './core/core.module';
 import { PrivatecomponentComponent } from './components/privatecomponent/privatecomponent.component';
+import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListcomponentComponent,
     PrivatecomponentComponent,
+    TemplateDrivenFormComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     CoreModule,
     AppRoutingModule,
     FirstcomponentModule,

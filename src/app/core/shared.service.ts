@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class SharedService {
   private mensagem: string = 'Mensagem Inicial';
   private login: boolean = false;

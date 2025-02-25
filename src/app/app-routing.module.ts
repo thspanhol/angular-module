@@ -4,12 +4,15 @@ import { FirstcomponentComponent } from './components/firstcomponent/firstcompon
 import { ListcomponentComponent } from './components/listcomponent/listcomponent.component';
 import { PrivatecomponentComponent } from './components/privatecomponent/privatecomponent.component';
 import { AuthorizedGuard } from './guard/Authorized.guard';
+import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'todo', pathMatch: 'full'},
   {path: 'todo', component: FirstcomponentComponent},
   {path: 'list', component: ListcomponentComponent},
   {path: 'private', component: PrivatecomponentComponent, canActivate: [AuthorizedGuard]},
+  {path: 'templateDrivenForm', component: TemplateDrivenFormComponent},
+
 ];
 
 @NgModule({
