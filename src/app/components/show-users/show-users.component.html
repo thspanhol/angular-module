@@ -1,0 +1,12 @@
+<h1>Lista de Users</h1>
+<input type="text" [(ngModel)]="inputId">
+<button (click)="createUser()">Create</button>
+<button (click)="updateUser()">Update</button>
+<button (click)="deleteUser()">Delete</button>
+<ul>
+    <li *ngFor="let user of users">
+        <strong>{{ user.nome }}</strong>
+        <p>{{ user.email }}</p>
+        <p>{{ user.id }}</p>
+    </li>
+</ul>

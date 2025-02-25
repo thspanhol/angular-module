@@ -10,6 +10,8 @@ import { PrivatecomponentComponent } from './components/privatecomponent/private
 import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { ShowUsersComponent } from './components/show-users/show-users.component';
 
 @NgModule({
   declarations: [
@@ -18,17 +20,20 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     PrivatecomponentComponent,
     TemplateDrivenFormComponent,
     ReactiveFormComponent,
+    ShowUsersComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     CoreModule,
     AppRoutingModule,
     FirstcomponentModule,
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })
